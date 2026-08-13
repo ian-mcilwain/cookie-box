@@ -1,0 +1,385 @@
+:root {
+--green3: #027e48;
+--green2: #bbddaa;
+--pink1: #f8b9d4;
+--red1: #ee1a3c;
+--peach1: #ed9a89;
+--green1: #e7efc6;
+--lavender1: #d8d1df;
+--blue1: #d4edf4;
+--pink2: #fadee5;
+--pink3: #eeb5c9;
+--peach2: #f9d9cb;
+--blue2: #b4cade;
+--blue3: #8ebec0;
+--color: #d4ebe5;
+--color: #f5f7da;
+--color: #e5f4f8;
+--color: #f8d6df;
+}
+
+
+
+
+
+/* TYPOGRAPHY */
+
+
+
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-thin-webfont.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-light-webfont.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-light-italic-webfont.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-regular-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-regular-italic-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-medium-webfont.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('fonts/brandon-grotesque-black-webfont.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+    font-family: "Brandon", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2, h3, h4 {
+    font-family: "Brandon", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+p {
+       font-family: "Brandon", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    a {
+        color: black;
+    }
+}
+
+body {
+    font-size: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+        font-weight: 300;
+    text-transform: uppercase;
+}
+
+/* Hero */
+
+section.hero {
+    padding: 20px;
+    padding-bottom: 10px;
+    background-color: var(--pink1);
+    .container {
+        display: flex;
+        .imgBox {
+            width: 50%;
+            background-image: url('Cookie Background.png');
+            background-size: cover;
+        }
+        .textBox {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background-color: #ffffff;
+            h1 {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                /* font-size: 200px; */
+                display: flex;
+                width: 100%;
+                margin: 0;
+                line-height: 0.9;
+                font-size: clamp(3rem, 10vw, 12rem);
+                /* color: var(--red1); */
+        
+                span {
+                    display: block;
+                    span.letter {
+                        display: inline;
+                    }
+                }
+        
+                span.box {
+                    display: flex;
+                    /* color: var(--green3); */
+                }
+            }
+        
+            h1 img.cookie {
+            width: clamp(1.5rem, 10vw, 12rem);
+            height: clamp(1.5rem, 10w, 12rem);
+            /* margin-bottom: clamp(-30px, -5vw, -10px); */
+            /* name | duration | timing-function | iteration-count */
+            animation: spin 30s linear infinite;
+            }
+
+            h2 {
+                text-align: center;
+                color: #6d6e70;
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+                margin-top: 100px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .divider {
+                background-color: #6d6e70;
+                height: 3px;
+                width: 100px;
+            }
+            h3.photographers {
+                margin-top: 10px;
+            }
+            img.logo {
+                width: 100%;
+                max-width: 180px;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cookie Marquee */
+
+section.cookieMarquee {
+    background-color: var(--blue1);
+    margin: 0;
+}
+
+.cookieContainer {
+    --s: 100px; /* size of the logo */
+    --d: 180s; /* animation duration*/
+    --n: 20; /* number of visible logos */ 
+    display: flex;
+    overflow: hidden;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    img {
+    width: var(--s);
+    offset: shape(from calc(var(--s)/-2) 50%,hline by calc(sibling-count()*max(100%/var(--n),var(--s) + 10px)));
+    animation: x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
+    }
+}
+
+img {
+  width: var(--s);
+  offset: shape(from calc(var(--s)/-2) 50%,hline by calc(sibling-count()*max(100%/var(--n),var(--s) + 10px)));
+  animation: x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
+}
+@keyframes x { 
+  to {offset-distance: 100%}
+}
+
+
+/* extra styles */
+.cookieContainer {
+  /* border: 1px solid; */
+  padding-block: 5px;
+  /* margin: 20px auto; */
+}
+:nth-child(2 of .cookieContainer) img {
+  animation-direction: reverse;
+}
+
+section.event {
+    background-color: var(--green1);
+    padding: 10px 20px;
+    .container {
+        display: flex;
+        .text {
+            width: 60%;
+            .intro {
+                background-color: var(--peach1);
+                padding: 20px;
+                padding-right: 240px;
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    font-size: 36px;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid black;
+                    display: inline-block;
+                    /* text-align: center; */
+                }
+                .btn {
+                    margin-top: 20px;
+                    display: inline-block;
+                }
+            }
+            .details {
+                display: flex;
+                h4 {
+                    border-bottom: 1px solid black;
+                    display: inline-block;
+                }
+
+                .left {
+                     background-color: var(--lavender1);
+                     width: 100%;
+                     padding: 20px;
+                }
+                .right {
+                    width: 240px;
+                    background-color: var(--pink2);
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        border-bottom: 2px solid;
+                        margin-bottom: 20px;
+                    }
+                }
+               
+
+                /* padding: 20px; */
+                
+            }
+        }
+        .image {
+            width: 40%;
+            background-image: url("images/CookieBox_INT_Page_15_Image_0001.png");
+        }
+    }
+
+}
+
+
+/* Where to Buy */
+
+section.whereToBuy {
+    padding: 10px 20px;
+    background: var(--peach2);
+    .container {
+        display: flex;
+        width: 100%;
+        .text {
+            width: 35%;
+            height: 100%;
+            background-color: white;
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--blue2);
+            h3 {
+                font-size: 36px;
+                font-weight: 900;
+                text-transform: uppercase;
+                padding-bottom: 10px;
+                border-bottom: 2px solid black;
+                display: block;
+                text-align: center;
+                /* width: 100%; */
+            }
+            }
+            .online,.inPerson {
+                h4 {
+                    text-transform: uppercase;
+                }
+                a {
+                    display: block;
+                    color: black;
+                    margin-bottom: 15px;
+                }
+            }
+
+            .online {
+                padding: 20px;
+                background-color: var(--peach1);
+                h4 {
+                    margin-top: 0;
+                }
+            }
+            .inPerson {
+                background-color: var(--pink1);
+                padding: 20px;
+                h4 {
+                    margin-top: 0s;
+                }
+            }
+
+        }
+        .image {
+            /* height: 100%; */
+            width: 65%;
+            /* background: purple; */
+            background-size: cover;
+            background-position: center;
+            background-image: url(images/CookieBox_INT_Page_20_Image_0001.png);
+        }
+    }
+}
