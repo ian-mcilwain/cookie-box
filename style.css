@@ -137,7 +137,7 @@ section.hero {
         display: flex;
         .imgBox {
             width: 50%;
-            background-image: url('Cookie Background.png');
+            background-image: url('Cookie Background.webp');
             background-size: cover;
         }
         .textBox {
@@ -215,6 +215,62 @@ section.hero {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Cookie Marquee v2 */
+
+section.cookieMarquee {
+    padding-left: 20px;
+    padding-right: 20px;
+    .marquee-container {
+  overflow: hidden;
+  width: 100%;
+  background: var(--b);
+  padding-block: 5px;
+  display: flex;
+
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px; /* Space between images */
+  white-space: nowrap;
+  animation: scrollMarqueeLTR 200s linear infinite;
+  padding-left: 20px;
+}
+
+.marquee-track img {
+  height: 100px; /* Uniform height */
+  width: auto;
+  flex-shrink: 0; /* Prevents images from distorting */
+}
+
+}
+
+section.cookieMarquee.RTL .marquee-container .marquee-track {
+    animation: scrollMarqueeRTL 200s linear infinite;
+}
+
+
+
+@keyframes scrollMarqueeLTR {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    /* Translate exactly half of the duplicated track width */
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollMarqueeRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate exactly half of the duplicated track width */
+    transform: translateX(-50%);
   }
 }
 
