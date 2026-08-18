@@ -250,12 +250,12 @@ img {
 }
 
 section.cookieMarquee.reverse .cookieContainer {
-    animation: -x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
+    animation: x-reverse var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
     img {
-        animation: -x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
+        animation: x-reverse var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
     }
 }
-@keyframes -x { 
+@keyframes x-reverse { 
   to {offset-distance: -100%}
 }
 
