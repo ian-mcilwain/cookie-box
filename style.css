@@ -624,6 +624,10 @@ section.whereToBuy {
             width:  100%;
         }
     }
+@media (max-width: 700px) {
+    section.cookieMarquee.reverse {
+        display: none;
+    }
 }
 
 @media (max-width: 500px) {
